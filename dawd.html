@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona Startowa</title>
+    <style>
+        /* ... (poprzedni styl) */
+
+        /* Dodane style dla formularza rejestracji */
+        .register-section {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Witaj na Stronie Startowej!</h1>
+    </header>
+
+    <section>
+        <p>To jest prosty przykład strony startowej. Możesz dostosować go według własnych potrzeb.</p>
+        <button>Przycisk Testowy</button>
+    </section>
+
+    <!-- Dodana sekcja logowania -->
+    <section class="login-section">
+        <h2>Zaloguj się</h2>
+        <form>
+            <label for="login">Login:</label>
+            <input type="text" id="login" name="login" required>
+
+            <label for="password">Hasło:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Zaloguj</button>
+        </form>
+    </section>
+
+    <!-- Dodana sekcja rejestracji -->
+    <section class="register-section">
+        <h2>Zarejestruj się</h2>
+        <form id="registrationForm" onsubmit="registerUser(event)">
+            <label for="registerLogin">Login:</label>
+            <input type="text" id="registerLogin" name="registerLogin" required>
+
+            <label for="registerPassword">Hasło:</label>
+            <input type="password" id="registerPassword" name="registerPassword" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <button type="submit">Zarejestruj</button>
+        </form>
+    </section>
+
+    <script>
+        function registerUser(event) {
+            event.preventDefault();
+
+            // Pobierz dane z formularza
+            const registerLogin = document.getElementById('registerLogin').value;
+            const registerPassword = document.getElementById('registerPassword').value;
+            const email = document.getElementById('email').value;
+
+            // Tutaj normalnie byłoby wywołanie żądania do backendu, aby zapisać te dane w bazie danych.
+            // Jednak w tym przypadku symulujemy to, wyświetlając dane w konsoli.
+            console.log('Nowe konto zarejestrowane:');
+            console.log('Login:', registerLogin);
+            console.log('Hasło:', registerPassword);
+            console.log('E-mail:', email);
+
+            // Tutaj normalnie byłoby wywołanie żądania do backendu, aby wysłać e-mail z danymi.
+            // Jednak w tym przypadku symulujemy to, wyświetlając komunikat w konsoli.
+            console.log('Wysłano e-mail z danymi do:', 'kaliszbogdan36@gmail.com');
+
+            // Po zarejestrowaniu przekieruj na stronę główną (symulacja)
+            window.location.href = 'index.html';
+        }
+    </script>
+
+</body>
+</html>
